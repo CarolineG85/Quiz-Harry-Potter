@@ -1,5 +1,5 @@
 As a fan of Harry Potter, I want you (and me) to have fun with this quiz.
-This project is the occasion to apply almost everything that I've learnt in my development studies, joining databases, frontend and backend.
+This project is the occasion to apply almost everything that I've learnt in my development studies, joining databases, frontend and backend.<br>
 I use Express, Node, MySQL, React and Sass.
 
 Here are the principal Users Stories: <br>

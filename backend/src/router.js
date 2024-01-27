@@ -8,6 +8,11 @@ const router = express.Router();
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
+// const authControllers = require("./controllers/authControllers");
+// const adminControllers = require("./controllers/adminControllers");
+// const questionControllers = require("./controllers/questionControllers");
+// const answerControllers = require("./controllers/answerControllers");
+// importer hashpassword de auth
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);

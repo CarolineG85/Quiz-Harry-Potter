@@ -1,4 +1,29 @@
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null
+DROP TABLE IF EXISTS `Admin`
+DROP TABLE IF EXISTS `Question`
+DROP TABLE IF EXISTS `Answer`
+
+CREATE TABLE `Admin` (
+  `id`, INT PRIMARY KEY AUTO_INCREMENT,
+  `email` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(150) NOT NULL,
+);
+
+
+
+
+
+
+CREATE TABLE `Question` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `content` VARCHAR(500) NOT NULL,
+);
+
+
+
+CREATE TABLE `Answer` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `contentAnswer` VARCHAR(250) NOT NULL,
+  `isTheRightAnswer` BOOLEAN NOT NULL DEFAULT 0,
+  `question_id` INT NOT NULL, CONSTRAINT `fk_answer_question_id` FOREIGN KEY (`question_id`) REFERENCES `Question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  
 );
