@@ -1,6 +1,8 @@
 As a fan of Harry Potter, I want you (and me) to have fun with this quiz.
 This project is the occasion to apply almost everything that I've learnt in my development studies, joining databases, frontend and backend.<br>
-I use Express, Node, MySQL, React and Sass.
+I use Express, Node, MySQL, React and Sass. <br>
+
+Locally, and in addition of npm install when I started my repository, I have installed cors, argon2, axios, dotenv and sass. <br>
 
 Here are the principal Users Stories: <br>
 -As a user, I would like to have multiple questions with various suggested answers so that I can choose the one that seems correct to me.<br>
