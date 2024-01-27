@@ -2,11 +2,11 @@ As a fan of Harry Potter, I want you (and me) to have fun with this quiz.
 This project is the occasion to apply almost everything that I've learnt in my development studies, joining databases, frontend and backend.
 I use Express, Node, MySQL, React and Sass.
 
-Here are the principal Users Stories:
--As a user, I would like to have multiple questions with various suggested answers so that I can choose the one that seems correct to me.
--As a user, I would like to know my score to determine how well I know the Harry Potter universe.
--As an administrator, I would like to have my own interface for managing questions (admin login).
--As an administrator, I would like to be able to view all questions in the database, add, modify, and delete questions (as well as their associated suggested answers).
+Here are the principal Users Stories: <br>
+-As a user, I would like to have multiple questions with various suggested answers so that I can choose the one that seems correct to me.<br>
+-As a user, I would like to know my score to determine how well I know the Harry Potter universe.<br>
+-As an administrator, I would like to have my own interface for managing questions (admin login).<br>
+-As an administrator, I would like to be able to view all questions in the database, add, modify, and delete questions (as well as their associated suggested answers).<br>
 
 You will find the wireframe and the MCD/MPD here:
 
