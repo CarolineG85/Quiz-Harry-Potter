@@ -27,5 +27,14 @@ class AdminManager extends AbstractManager {
     // Return the array of items
     return rows;
   }
+
+  async getByMail(email) {
+    const [result] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE email=?`,
+      [email]
+    );
+    return result;
+  }
 }
+
 module.exports = AdminManager;

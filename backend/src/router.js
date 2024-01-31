@@ -8,11 +8,11 @@ const router = express.Router();
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
-// const authControllers = require("./controllers/authControllers");
+const authControllers = require("./controllers/authControllers");
 const adminControllers = require("./controllers/adminControllers");
 const questionControllers = require("./controllers/questionControllers");
 const answerControllers = require("./controllers/answerControllers");
-// importer hashpassword de auth
+const { hashPassword } = require("./services/auth");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
@@ -24,6 +24,9 @@ router.get("/items/:id", itemControllers.read);
 router.post("/items", itemControllers.add);
 
 /* ************************************************************************* */
+// Route for authentication
+router.post("/login", authControllers.login);
+
 // Route for questions
 router.get("/questions", questionControllers.browse);
 router.get("/questions/:id", questionControllers.read);
@@ -32,8 +35,8 @@ router.put("/questions/:id", questionControllers.edit);
 router.delete("/questions/:id", questionControllers.destroy);
 
 // Route for admin
-router.get("/admin/:id", adminControllers.read);
-router.get("/admin", adminControllers.browse);
+router.get("/admin/:id", hashPassword, adminControllers.read);
+router.get("/admin", hashPassword, adminControllers.browse);
 
 // Route for answers
 router.get("/answers", answerControllers.browse);
