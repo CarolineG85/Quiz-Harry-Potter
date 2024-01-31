@@ -1,0 +1,33 @@
+.adminNavbar {
+  display: flex;
+  justify-content: flex-end;
+  .admin-buttons {
+    display: flex;
+    justify-content: space-around;
+    button {
+      border-radius: 10px;
+      border: none;
+      color: #000000;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .button-modify {
+      background-color: royalblue;
+    }
+    .button-add {
+      background-color: rgb(231, 20, 20);
+    }
+    .button-connexion {
+      background-color: rgb(248, 178, 49);
+    }
+    .button-deconnexion {
+      background-color: seagreen;
+    }
+  }
+}

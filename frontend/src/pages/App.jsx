@@ -1,5 +1,13 @@
-// function App() {
-//   return <div></div>;
-// }
+import { Outlet } from "react-router-dom";
+import AdminNavbar from "../components/AdminNavbar";
 
-// export default App;
+function App() {
+  return (
+    <div>
+      <AdminNavbar />
+      <Outlet />
+    </div>
+  );
+}
+
+export default App;

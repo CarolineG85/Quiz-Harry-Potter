@@ -10,7 +10,7 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 // const authControllers = require("./controllers/authControllers");
 // const adminControllers = require("./controllers/adminControllers");
-// const questionControllers = require("./controllers/questionControllers");
+const questionControllers = require("./controllers/questionControllers");
 // const answerControllers = require("./controllers/answerControllers");
 // importer hashpassword de auth
 
@@ -24,5 +24,10 @@ router.get("/items/:id", itemControllers.read);
 router.post("/items", itemControllers.add);
 
 /* ************************************************************************* */
+router.get("/questions", questionControllers.browse);
+router.get("/questions/:id", questionControllers.read);
+router.post("/questions", questionControllers.add);
+router.put("/questions/:id", questionControllers.edit);
+router.delete("/questions/:id", questionControllers.destroy);
 
 module.exports = router;
