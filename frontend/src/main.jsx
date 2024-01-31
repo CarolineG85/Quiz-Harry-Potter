@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./pages/App";
+import App, { loadQuestions } from "./pages/App";
 import "./styles/index.scss";
 import ConnexionAdmin from "./pages/ConnexionAdmin";
 import HomeAdmin from "./pages/HomeAdmin";
@@ -15,11 +15,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: loadQuestions,
     children: [
-      {
-        index: true,
-        element: <Question />,
-      },
       { path: "/connexion", element: <ConnexionAdmin /> },
       {
         path: "/questions-admin",
@@ -31,6 +28,10 @@ const router = createBrowserRouter([
       },
 
       { path: "/home-admin", element: <HomeAdmin /> },
+      {
+        path: "/question/:id",
+        element: <Question />,
+      },
     ],
   },
 ]);

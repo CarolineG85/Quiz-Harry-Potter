@@ -1,12 +1,7 @@
+@import "settings";
 @import "homeAdmin";
 @import "formQuestions";
 @import "question";
 @import "adminNavbar";
 @import "connexionAdmin";
 @import "score";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
