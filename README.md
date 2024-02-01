@@ -12,10 +12,8 @@ Here are the principal Users Stories: <br>
 -As an administrator, I would like to have my own interface for managing questions (admin login).<br>
 -As an administrator, I would like to be able to view all questions in the database, add, modify, and delete questions (as well as their associated suggested answers).<br>
 
-You will find the wireframe and the MCD/MPD here:
+You will find the the MCD/MPD here:
 
-
-![wireframe-carolineG](https://github.com/CarolineG85/Quiz-Harry-Potter/assets/144689553/b9e8537d-efc3-4083-9e7e-9f7556e40800) 
 ![mcd-mpd-checkpoint04](https://github.com/CarolineG85/Quiz-Harry-Potter/assets/144689553/74fe5ac7-9928-450a-b5ea-0e0324d50e95)
 
 
