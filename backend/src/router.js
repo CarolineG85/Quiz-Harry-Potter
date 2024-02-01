@@ -12,7 +12,6 @@ const authControllers = require("./controllers/authControllers");
 const adminControllers = require("./controllers/adminControllers");
 const questionControllers = require("./controllers/questionControllers");
 const answerControllers = require("./controllers/answerControllers");
-const { hashPassword } = require("./services/auth");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
@@ -35,8 +34,8 @@ router.put("/questions/:id", questionControllers.edit);
 router.delete("/questions/:id", questionControllers.destroy);
 
 // Route for admin
-router.get("/admin/:id", hashPassword, adminControllers.read);
-router.get("/admin", hashPassword, adminControllers.browse);
+router.get("/admin/:id", adminControllers.read);
+router.get("/admin", adminControllers.browse);
 
 // Route for answers
 router.get("/answers", answerControllers.browse);

@@ -1,0 +1,97 @@
+.connexion-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("/maraudeur.jpg");
+  background-size: cover;
+
+  .button-connexion-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .button-accueil {
+      border-radius: 10px;
+      border: none;
+      color: #000000;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: rgb(223, 200, 75);
+    }
+  }
+  .cnx-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .cnx-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin-left: 40px;
+      padding-bottom: 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      border: none;
+      color: antiquewhite;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      background-color: silver;
+      outline: none;
+      .cnx-title {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: antiquewhite;
+      }
+      .cnx-input {
+        height: 2em;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        background-color: silver;
+        outline: none;
+        input {
+          background-color: transparent;
+        }
+      }
+    }
+    .button-submit-container {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      .button-cnx {
+        border-radius: 10px;
+        border: none;
+        color: #000000;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: seagreen;
+      }
+    }
+  }
+}
