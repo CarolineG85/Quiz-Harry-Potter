@@ -6,9 +6,7 @@ function AdminNavbar() {
   return (
     <div className="adminNavbar">
       <div className="admin-buttons">
-        {location.pathname === "/home-admin" ||
-        location.pathname === "/questions-admin/modify/:id" ||
-        location.pathname === "/questions-admin" ? (
+        {location.pathname === "/home-admin" ? (
           <>
             <Link to="/questions-admin" className="addQuestion">
               <button className="button-add" type="button">

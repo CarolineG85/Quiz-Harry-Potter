@@ -1,0 +1,130 @@
+.form-add-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("/letter-hogwarts.jpg");
+  background-size: cover;
+
+  .button-home-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .button-homeAd {
+      border-radius: 10px;
+      border: none;
+      color: #000000;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .add-form {
+    display: flex;
+    flex-direction: column;
+
+    .add-question {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-left: 40px;
+      padding-bottom: 40px;
+
+      label {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: antiquewhite;
+      }
+      textarea {
+        height: 6.25em;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        resize: none;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        background-color: silver;
+        outline: none;
+      }
+    }
+    .add-answers {
+      width: 40%;
+      margin-left: 40px;
+
+      label {
+        color: antiquewhite;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      h3 {
+        color: antiquewhite;
+        padding-bottom: 20px;
+      }
+      .each-answer {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        .input-ans {
+          border-radius: 5px;
+          border: none;
+          outline: none;
+          height: 1.5em;
+          padding: 8px;
+          background-color: silver;
+        }
+        .checkbox {
+          margin-top: 10px;
+          color: antiquewhite;
+          padding: 5px;
+        }
+
+        //TODO changing checkbox's style
+      }
+
+      .add-raw-one {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .add-raw-two {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+    }
+    .button-add-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 60%;
+      .button-add {
+        margin: 40px;
+        border-radius: 10px;
+        border: none;
+        color: #000000;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: rgb(179, 63, 63);
+      }
+    }
+  }
+}
+
+// TODO box-shadow...
