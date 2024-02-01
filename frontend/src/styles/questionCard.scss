@@ -1,0 +1,41 @@
+.question-space {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  margin: 0px;
+  .button-card-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 8%;
+    width: 67%;
+    .button-card {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .question-card {
+    display: flex;
+    background-color: rgb(76, 76, 158);
+    flex-wrap: wrap;
+    border: 1px solid silver;
+    border-radius: 5px;
+    width: 10em;
+    height: 10em;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

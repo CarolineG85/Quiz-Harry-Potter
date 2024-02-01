@@ -1,7 +1,7 @@
 .adminNavbar {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 
   .admin-buttons {
     display: flex;
@@ -19,9 +19,7 @@
       margin-top: 10px;
       cursor: pointer;
     }
-    .button-modify {
-      background-color: royalblue;
-    }
+
     .button-add {
       background-color: rgb(231, 20, 20);
     }
