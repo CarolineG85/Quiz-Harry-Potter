@@ -57,12 +57,10 @@ function ModifyFormQuestions() {
         setTimeout(() => {
           navigate("/home-admin");
         }, 1000);
-      } else {
-        // eslint-disable-next-line no-alert
-        alert("Erreur lors de la modification"); // TODO remplacer par des popups
       }
     } catch (error) {
       console.error(error);
+      alert("Erreur lors de la modification"); // TODO remplacer par des popups
     }
 
     // const answerToUpdate = {
@@ -75,7 +73,7 @@ function ModifyFormQuestions() {
     //     `${import.meta.env.VITE_BACKEND_URL}/api/answers/${answer1.id}`,
     //     answerToUpdate
     //   );
-    //   console.log(answer1.id);
+
     //   if (response.status === 200) {
     //     setAnswer1(answerToUpdate);
     //     setAnswer2(answerToUpdate);

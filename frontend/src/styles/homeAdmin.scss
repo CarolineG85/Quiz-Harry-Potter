@@ -1,6 +1,8 @@
 .homeAdmin-page {
   background-image: url("/letter-hogwarts.jpg");
   background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
   .questions-element {
     display: flex;
     flex-wrap: wrap;

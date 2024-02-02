@@ -10,6 +10,8 @@ import HomeAdmin, { load } from "./pages/HomeAdmin";
 import AddFormQuestions from "./pages/AddFormQuestions";
 import ModifyFormQuestions from "./pages/ModifyFormQuestions";
 import Question from "./pages/Question";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { AdminProvider } from "./components/AdminContext";
 
 const router = createBrowserRouter([
   {
@@ -26,20 +28,40 @@ const router = createBrowserRouter([
   { path: "/connexion", element: <ConnexionAdmin /> },
   {
     path: "/questions-admin",
-    element: <AddFormQuestions />,
+    element: (
+      <ProtectedRoute>
+        <AddFormQuestions />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/questions-admin/modify/:id",
-    element: <ModifyFormQuestions />,
+    element: (
+      <ProtectedRoute>
+        <ModifyFormQuestions />
+      </ProtectedRoute>
+    ),
   },
 
-  { path: "/home-admin", element: <HomeAdmin />, loader: load },
+  {
+    path: "/home-admin",
+    element: (
+      <ProtectedRoute>
+        <HomeAdmin />
+      </ProtectedRoute>
+    ),
+    loader: load,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AdminProvider>
+      <RouterProvider router={router} />
+    </AdminProvider>
   </React.StrictMode>
 );
+
+// AdminProvider vu qu'on ne peut pas ici englober tout App

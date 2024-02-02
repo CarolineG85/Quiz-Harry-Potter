@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState, useContext } from "react";
 import axios from "axios";
+import { AdminContext } from "../components/AdminContext";
 
 function ConnexionAdmin() {
   const navigate = useNavigate();
-
+  const { setAdmin } = useContext(AdminContext);
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [isIncorrect, setIsIncorrect] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,13 +26,13 @@ function ConnexionAdmin() {
       );
 
       if (response.status === 200) {
+        setAdmin(response.data);
+
         navigate("/home-admin");
-      } else {
-        // eslint-disable-next-line no-alert
-        alert("Identifiant ou mot de passe incorrect"); // TODO popups
       }
     } catch (error) {
       console.error(error);
+      setIsIncorrect("Identifiant ou mot de passe incorrect");
     }
   };
   return (
@@ -47,7 +49,7 @@ function ConnexionAdmin() {
         <div className="cnx-container">
           <input
             className="cnx-input"
-            type="text"
+            type="email"
             placeholder="Adresse mail"
             required
             ref={emailRef}
@@ -68,6 +70,7 @@ function ConnexionAdmin() {
           </button>
         </div>
       </form>
+      {isIncorrect && <h1 className="incorrect">{isIncorrect}</h1>}
     </div>
   );
 }
