@@ -25,6 +25,7 @@ export const load = async () => {
     const questions = await axios.get(
       `${import.meta.env.VITE_BACKEND_URL}/api/questions`
     );
+    // TODO add bearer token to the request
     return questions.data;
   } catch (error) {
     console.error(error);

@@ -15,7 +15,7 @@ function AddFormQuestions() {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/questions`,
         questionToCreate
-      );
+      ); // TODO add bearer token to the request
       if (response.status === 201) {
         setQuestion(questionToCreate);
         setTimeout(() => {

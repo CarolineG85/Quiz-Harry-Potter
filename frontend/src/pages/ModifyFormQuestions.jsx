@@ -1,7 +1,7 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+// TODO add bearer token to the request and create a component to handle each answer...
 function ModifyFormQuestions() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ function ModifyFormQuestions() {
       }
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification"); // TODO remplacer par des popups
+      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec tostify
     }
 
     // const answerToUpdate = {

@@ -12,6 +12,7 @@ const authControllers = require("./controllers/authControllers");
 const adminControllers = require("./controllers/adminControllers");
 const questionControllers = require("./controllers/questionControllers");
 const answerControllers = require("./controllers/answerControllers");
+// const { verifyToken } = require("./services/auth"); TODO: uncomment this line and add verifyToken to the routes that need it
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);

@@ -28,6 +28,8 @@ class AdminManager extends AbstractManager {
     return rows;
   }
 
+  // TODO if I want to create an admin Add hashpassword default like this:    const hashedDefault = await auth.hashAString("welcometohubidea");
+
   async getByMail(email) {
     const [result] = await this.database.query(
       `SELECT * FROM ${this.table} WHERE email=?`,
