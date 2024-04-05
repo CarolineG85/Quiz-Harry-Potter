@@ -26,11 +26,10 @@ function QuestionCard({ question }) {
           <img src="/close-button.png" alt="annuler" />
         </button>
       </div>
-      <div className="question-card">
-        <Link to={`/questions-admin/modify/${question.id}`}>
-          {question.content}
-        </Link>
-      </div>
+
+      <Link to={`/questions-admin/modify/${question.id}`}>
+        <div className="question-card">{question.content}</div>
+      </Link>
     </div>
   );
 }

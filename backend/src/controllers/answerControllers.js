@@ -58,6 +58,11 @@ const edit = async (req, res, next) => {
     isTheRightAnswer,
     questionId,
   };
+  if (updatedAnswer.isTheRightAnswer === "true") {
+    updatedAnswer.isTheRightAnswer = 1;
+  } else {
+    updatedAnswer.isTheRightAnswer = 0;
+  }
 
   try {
     await tables.Answer.update(updatedAnswer);
