@@ -1,61 +1,108 @@
+// Import the AbstractManager class
 const AbstractManager = require("./AbstractManager");
 
+// Define a new class QuestionManager that extends AbstractManager
 class QuestionManager extends AbstractManager {
   constructor() {
     // Call the constructor of the parent class (AbstractManager)
-    // and pass the table name "item" as configuration
+    // and pass the table name "Question" as configuration
     super({ table: "Question" });
   }
 
   // The C of CRUD - Create operation
-
+  // This method creates a new question in the database
   async create({ content }) {
-    // Execute the SQL INSERT query to add a new item to the "item" table
-    const [result] = await this.database.query(
-      `insert into ${this.table} (content) values (?)`,
-      [content]
-    );
+    try {
+      // Execute the SQL INSERT query to add a new question to the "Question" table
+      const [result] = await this.database.query(
+        `insert into ${this.table} (content) values (?)`,
+        [content]
+      );
 
-    return result;
+      // Return the result of the query
+      return result;
+    } catch (error) {
+      // Log the error message and re-throw the error
+      console.error(
+        `Error occurred while creating a new question: ${error.message}`
+      );
+      throw error;
+    }
   }
 
   // The Rs of CRUD - Read operations
 
+  // This method reads a question by its ID
   async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific item by its ID
-    const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
-      [id]
-    );
-
-    // Return the first row of the result, which represents the item
-    return rows[0];
+    try {
+      const [rows] = await this.database.query(
+        `select * from ${this.table} where id = ?`,
+        [id]
+      );
+      // Return the first row (the question)
+      return rows[0];
+    } catch (error) {
+      // Log the error message and re-throw the error
+      console.error(
+        `Error occurred while reading a question: ${error.message}`
+      );
+      throw error;
+    }
   }
 
+  // This method reads all questions
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all items from the "item" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of items
-    return rows;
+    try {
+      const [rows] = await this.database.query(`select * from ${this.table}`);
+      // Return all rows (all questions)
+      return rows;
+    } catch (error) {
+      // Log the error message and re-throw the error
+      console.error(
+        `Error occurred while reading all questions: ${error.message}`
+      );
+      throw error;
+    }
   }
 
   // The U of CRUD - Update operation
+  // This method updates a question by its ID
   async update({ id, content }) {
-    const [result] = await this.database.query(
-      `update ${this.table} set content = ? where id = ?`,
-      [content, id]
-    );
-    return result;
+    try {
+      const [result] = await this.database.query(
+        `update ${this.table} set content = ? where id = ?`,
+        [content, id]
+      );
+      // Return the result of the query
+      return result;
+    } catch (error) {
+      // Log the error message and re-throw the error
+      console.error(
+        `Error occurred while updating a question: ${error.message}`
+      );
+      throw error;
+    }
   }
 
   // The D of CRUD - Delete operation
+  // This method deletes a question by its ID
   async delete(id) {
-    const [result] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id=?`,
-      [id]
-    );
-    return result;
+    try {
+      const [result] = await this.database.query(
+        `DELETE FROM ${this.table} WHERE id=?`,
+        [id]
+      );
+      // Return the result of the query
+      return result;
+    } catch (error) {
+      // Log the error message and re-throw the error
+      console.error(
+        `Error occurred while deleting a question: ${error.message}`
+      );
+      throw error;
+    }
   }
 }
+
+// Export the QuestionManager class
 module.exports = QuestionManager;
