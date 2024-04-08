@@ -44,10 +44,13 @@ const edit = async (req, res, next) => {
   };
 
   try {
+    // Update the item in the database
     await tables.Question.update(updatedQuestion);
 
+    // Respond with HTTP 200 (OK) and the updated item
     res.status(200).send(updatedQuestion);
   } catch (err) {
+    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
@@ -72,9 +75,13 @@ const add = async (req, res, next) => {
 // The D of BREAD - Destroy (Delete) operation
 const destroy = async (req, res, next) => {
   try {
+    // Delete the item from the database
     await tables.Question.delete(req.params.id);
+
+    // Respond with HTTP 204 (No Content)
     res.sendStatus(204);
   } catch (err) {
+    // Pass any errors to the error-handling middleware
     next(err);
   }
 };
