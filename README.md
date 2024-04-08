@@ -14,10 +14,11 @@ Here are the principal Users Stories: <br>
 
 You will find the the MCD/MPD here:
 
-![mcd-mpd-checkpoint04](https://github.com/CarolineG85/Quiz-Harry-Potter/assets/144689553/74fe5ac7-9928-450a-b5ea-0e0324d50e95)
+![mcd-hp](https://github.com/CarolineG85/Quiz-Harry-Potter/assets/144689553/9add1080-c8b3-44db-84de-730ba4c57037)
+
 
 
 This app wil be simple, each person will be directed straight to the questions page. They will answer a serie of 5 questions and receive their final score at the end. At this moment, only the previously designated administrator will be able to log in to add, modify, or delete questions.
 
 
-Enjoy!!
+
