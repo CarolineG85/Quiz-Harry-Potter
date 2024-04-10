@@ -50,7 +50,10 @@ function ModifyFormQuestions() {
     try {
       const response = await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/questions/${id}`,
-        questionToUpdate
+        questionToUpdate,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       if (response.status === 200) {
         setQuestion(questionToUpdate);
@@ -60,7 +63,7 @@ function ModifyFormQuestions() {
       }
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec tostify
+      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec toastify
     }
 
     // const answerToUpdate = {

@@ -14,6 +14,7 @@ VALUES (
         "carolinehp@gmail.com", "welcometoharry"
     );
 
+
 CREATE TABLE `Question` (
     `id` INT PRIMARY KEY AUTO_INCREMENT, `content` VARCHAR(500) NOT NULL
 );

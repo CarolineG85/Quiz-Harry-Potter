@@ -37,6 +37,7 @@ router.delete("/questions/:id", verifyToken, questionControllers.destroy);
 // Route for admin
 router.get("/admin/:id", adminControllers.read);
 router.get("/admin", adminControllers.browse);
+// router.post("/admin", adminControllers.add);
 
 // Route for answers
 router.get("/answers", answerControllers.browse);

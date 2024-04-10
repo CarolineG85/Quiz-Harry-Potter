@@ -14,8 +14,11 @@ function AddFormQuestions() {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/questions`,
-        questionToCreate
-      ); // TODO add bearer token to the request
+        questionToCreate,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      );
       if (response.status === 201) {
         setQuestion(questionToCreate);
         setTimeout(() => {

@@ -26,8 +26,14 @@ function ConnexionAdmin() {
       );
 
       if (response.status === 200) {
-        setAdmin(response.data);
+        const { admin } = response.data;
+        const { token } = response.data;
 
+        setAdmin(admin);
+        localStorage.setItem("token", token);
+        localStorage.setItem("adminId", admin.id);
+
+        setAdmin(response.data);
         navigate("/home-admin");
       }
     } catch (error) {
