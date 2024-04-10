@@ -1,5 +1,7 @@
 // Import the AbstractManager class
 const AbstractManager = require("./AbstractManager");
+// Import the auth module
+// const auth = require("../services/auth");
 
 // Define a new class AdminManager that extends AbstractManager
 class AdminManager extends AbstractManager {
@@ -42,7 +44,10 @@ class AdminManager extends AbstractManager {
     }
   }
 
+  // TODO if I want to create an admin Add hashpassword default like this:    const hashedDefault = await auth.hashAString("welcometohubidea");
+
   // This method gets an admin by email
+
   async getByMail(email) {
     try {
       // Execute the SQL SELECT query to get an admin from the "Admin" table by email
@@ -60,6 +65,23 @@ class AdminManager extends AbstractManager {
       throw error;
     }
   }
+
+  // async create({ email, password = "welcomeharry" }) {
+  //   try {
+  //     const hashedPassword = await auth.hashPassword(password);
+  //     // Execute the SQL INSERT query to create a new admin in the "Admin" table
+  //     const [result] = await this.database.query(
+  //       `INSERT INTO ${this.table} (email, password) VALUES (?, ?)`,
+  //       [email, hashedPassword]
+  //     );
+  //     // Return the result of the query
+  //     return result;
+  //   } catch (error) {
+  //     // Log the error message and re-throw the error
+  //     console.error(`Error occurred while creating an admin: ${error.message}`);
+  //     throw error;
+  //   }
+  // }
 }
 
 // Export the AdminManager class

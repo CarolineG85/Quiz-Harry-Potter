@@ -2,12 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
 import QuestionCard from "../components/QuestionCard";
-import { AdminContext } from "../components/AdminContext";
+import { AdminProvider } from "../components/AdminContext";
 
 function HomeAdmin() {
   const questions = useLoaderData();
   return (
-    <AdminContext.Provider>
+    <AdminProvider>
       <div className="homeAdmin-page">
         <AdminNavbar />
         <div className="questions-element">
@@ -16,7 +16,7 @@ function HomeAdmin() {
           })}
         </div>
       </div>
-    </AdminContext.Provider>
+    </AdminProvider>
   );
 }
 

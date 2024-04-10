@@ -20,4 +20,4 @@ You will find the the MCD/MPD here:
 This app wil be simple, each person will be directed straight to the questions page. They will answer a serie of 5 questions and receive their final score at the end. At this moment, only the previously designated administrator will be able to log in to add, modify, or delete questions.
 
 
-Enjoy!!
+

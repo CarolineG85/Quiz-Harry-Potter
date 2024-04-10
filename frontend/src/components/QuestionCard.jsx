@@ -8,7 +8,10 @@ function QuestionCard({ question }) {
   const handleDeleteQuestion = async () => {
     try {
       await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}/api/questions/${question.id}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/questions/${question.id}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       revalidator.revalidate();
     } catch (error) {

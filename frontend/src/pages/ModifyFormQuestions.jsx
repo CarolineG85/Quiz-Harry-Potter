@@ -1,7 +1,7 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+// TODO add bearer token to the request and create a component to handle each answer...
 function ModifyFormQuestions() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -50,7 +50,10 @@ function ModifyFormQuestions() {
     try {
       const response = await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/questions/${id}`,
-        questionToUpdate
+        questionToUpdate,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
       if (response.status === 200) {
         setQuestion(questionToUpdate);
@@ -60,7 +63,7 @@ function ModifyFormQuestions() {
       }
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification"); // TODO remplacer par des popups
+      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec toastify
     }
 
     // const answerToUpdate = {
