@@ -48,6 +48,12 @@ VALUES (
     ),
     (
         "Quel sort permet de créer de l'eau?"
+    ),
+    (
+        "Quel sort permet d'ouvrir une porte?"
+    ),
+    (
+        "Quelle est la dernière épreuve du Tournoi des Trois Sorciers?"
     );
 
 CREATE TABLE `Answer` (
@@ -124,4 +130,12 @@ VALUES ("Pattenrond", 0, 1),
     ("Aguamenti", 1, 10),
     ("Alohomora", 0, 10),
     ("Accio", 0, 10),
-    ("Avada Kedavra", 0, 10);
+    ("Avada Kedavra", 0, 10),
+    ("Alohomora", 1, 11),
+    ("Accio", 0, 11),
+    ("Avada Kedavra", 0, 11),
+    ("Aguamenti", 0, 11),
+    ("Le labyrinthe", 1, 12),
+    ("Le bal de Noël", 0, 12),
+    ("Le dragon", 0, 12),
+    ("Le lac", 0, 12);
