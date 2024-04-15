@@ -38,6 +38,7 @@ function App() {
         ) : (
           <>
             <Outlet />
+
             <button
               type="button"
               onClick={handleNextQuest}
@@ -65,3 +66,4 @@ export const loadQuestions = async () => {
 };
 
 export default App;
+// Question is a page represented by the outlet component

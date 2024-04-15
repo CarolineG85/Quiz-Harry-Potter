@@ -3,6 +3,7 @@
   min-width: 100vw;
   background-image: url("/maraudeur.jpg");
   background-size: cover;
+  // TODO reduce brightness of the image
 
   .button-connexion-container {
     display: flex;
@@ -29,6 +30,11 @@
     justify-content: center;
     align-items: center;
 
+    .bien {
+      color: rgb(136, 37, 37);
+      // TODO font family like hp
+    }
+
     .cnx-container {
       display: flex;
       flex-direction: column;
@@ -40,7 +46,6 @@
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
       border: none;
-      color: antiquewhite;
       padding: 10px 20px;
       text-align: center;
       text-decoration: none;

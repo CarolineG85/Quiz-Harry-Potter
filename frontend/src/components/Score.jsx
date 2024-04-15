@@ -7,3 +7,4 @@ function Score() {
 }
 
 export default Score;
+// TODO add a restart button
