@@ -51,7 +51,7 @@ function ConnexionAdmin() {
         </Link>
       </div>
       <form className="cnx-form" onSubmit={handleLogin}>
-        <h1>Bienvenue</h1>
+        <h1 className="bien">Bienvenue</h1>
         <div className="cnx-container">
           <input
             className="cnx-input"

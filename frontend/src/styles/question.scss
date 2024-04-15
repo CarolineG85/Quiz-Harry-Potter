@@ -1,5 +1,6 @@
 .question-page-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -7,14 +8,31 @@
 
   .question-answer-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: silver;
+    background-color: rgba(
+      192,
+      192,
+      192,
+      0.1
+    ); // silver color with transparency
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 1.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 50%;
     height: 50%;
-    border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
+    font-size: 1.5rem;
+    color: silver;
+  }
+
+  .answers {
+    padding: 10px;
+    margin: 8rem;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
 }

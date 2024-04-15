@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -7,19 +7,22 @@ import Score from "../components/Score";
 
 function App() {
   const navigate = useNavigate();
+  const questions = useLoaderData();
+  const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
+  const [questArray] = useState(shuffledQuestions.slice(0, 10));
   const [index, setIndex] = useState(0);
   const [isQuestEnd, setIsQuestEnd] = useState(false);
 
   useEffect(() => {
-    if (index < 10) {
-      navigate(`/question/${index + 1}`);
-    } else if (index === 10) {
+    if (index < questArray.length) {
+      navigate(`/question/${questArray[index].id}`);
+    } else if (index === questArray.length) {
       setIsQuestEnd(true);
     }
-  }, [index, navigate]);
+  }, [index, navigate, questArray]);
 
   const handleNextQuest = () => {
-    if (index < 10) {
+    if (index < questArray.length) {
       setIndex((prevIndex) => prevIndex + 1);
       setIsQuestEnd(false);
     }
@@ -35,6 +38,7 @@ function App() {
         ) : (
           <>
             <Outlet />
+
             <button
               type="button"
               onClick={handleNextQuest}
@@ -62,3 +66,4 @@ export const loadQuestions = async () => {
 };
 
 export default App;
+// Question is a page represented by the outlet component
