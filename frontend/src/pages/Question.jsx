@@ -9,6 +9,14 @@ function Question() {
   const [answers, setAnswers] = useState([]);
   const [point, setPoint] = useState(0);
   const [clickedButtons, setClickedButtons] = useState([]);
+  const [prevId, setPrevId] = useState(null);
+
+  useEffect(() => {
+    if (id !== prevId) {
+      setClickedButtons([]);
+      setPrevId(id);
+    }
+  }, [id, prevId]);
 
   const getQuestion = async () => {
     try {

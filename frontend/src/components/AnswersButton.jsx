@@ -9,7 +9,6 @@ function AnswersButton({
   clickedButtons,
   setClickedButtons,
 }) {
-  // const [clicked, setClicked] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
 
