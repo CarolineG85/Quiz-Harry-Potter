@@ -40,6 +40,11 @@
       );
       background-size: 200% 200%;
       animation: wave 5s ease infinite;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
