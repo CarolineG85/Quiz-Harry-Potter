@@ -1,21 +1,26 @@
-import { Outlet, useNavigate, useLoaderData, Navigate } from "react-router-dom";
-import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useNavigate, useLoaderData, Outlet, Navigate } from "react-router-dom";
+import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
 
 function App() {
   const navigate = useNavigate();
   const questions = useLoaderData();
-  const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
-  const [questArray] = useState(shuffledQuestions.slice(0, 10));
+  const [questArray, setQuestArray] = useState([]);
   const [index, setIndex] = useState(0);
   const [isQuestEnd, setIsQuestEnd] = useState(false);
 
   useEffect(() => {
-    if (index < questArray.length) {
+    if (questions) {
+      const shuffledQuestions = [...questions].sort(() => 0.5 - Math.random());
+      setQuestArray(shuffledQuestions.slice(0, 10));
+    }
+  }, [questions]);
+
+  useEffect(() => {
+    if (questArray.length > 0 && index < questArray.length) {
       navigate(`/question/${questArray[index].id}`);
-    } else if (index === questArray.length) {
+    } else if (questArray.length > 0 && index === questArray.length) {
       setIsQuestEnd(true);
     }
   }, [index, navigate, questArray]);
