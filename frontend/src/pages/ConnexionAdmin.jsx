@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState, useContext } from "react";
 import axios from "axios";
-import { AdminContext } from "../components/AdminContext";
+import { AdminContext } from "../contexts/AdminContext";
 
 function ConnexionAdmin() {
   const navigate = useNavigate();

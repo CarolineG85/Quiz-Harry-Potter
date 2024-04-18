@@ -1,13 +1,15 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import AnswersButton from "../components/AnswersButton";
 
 function Question() {
   const [question, setQuestion] = useState([]);
   const { id } = useParams();
+
   const [answers, setAnswers] = useState([]);
-  const [point, setPoint] = useState(0);
+
   const [clickedButtons, setClickedButtons] = useState([]);
   const [prevId, setPrevId] = useState(null);
 
@@ -54,16 +56,11 @@ function Question() {
               key={answer.id}
               contentAnswer={answer.contentAnswer}
               result={answer.isTheRightAnswer}
-              setPoint={setPoint}
-              point={point}
               clickedButtons={clickedButtons}
               setClickedButtons={setClickedButtons}
             />
           );
         })}
-        <div className="point">
-          <h1>{point} </h1>
-        </div>
       </div>
     </div>
   );

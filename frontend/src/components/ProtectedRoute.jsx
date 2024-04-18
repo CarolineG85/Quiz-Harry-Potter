@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AdminContext } from "./AdminContext";
+import { AdminContext } from "../contexts/AdminContext";
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();

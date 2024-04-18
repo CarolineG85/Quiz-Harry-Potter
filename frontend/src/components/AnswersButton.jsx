@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { ScoreContext } from "../contexts/ScoreContext";
 
 function AnswersButton({
   contentAnswer,
   result,
-  setPoint,
-  point,
   clickedButtons,
   setClickedButtons,
 }) {
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
+  const { score, setScore } = useContext(ScoreContext);
 
   const handleClick = () => {
     if (clickedButtons.length < 1) {
       setClickedButtons([...clickedButtons, contentAnswer]);
       if (result === 1) {
-        setPoint(point + 1);
+        setScore(score + 1);
         setIsCorrect(true);
       } else if (result === 0) {
-        setPoint(point);
+        setScore(score);
         setIsWrong(true);
       }
     }
@@ -44,8 +44,7 @@ function AnswersButton({
 AnswersButton.propTypes = {
   contentAnswer: PropTypes.string.isRequired,
   result: PropTypes.number.isRequired,
-  setPoint: PropTypes.func.isRequired,
-  point: PropTypes.number.isRequired,
+
   clickedButtons: PropTypes.arrayOf(PropTypes.string).isRequired,
   setClickedButtons: PropTypes.func.isRequired,
 };

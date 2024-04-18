@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
 import QuestionCard from "../components/QuestionCard";
-import { AdminProvider } from "../components/AdminContext";
+import { AdminProvider } from "../contexts/AdminContext";
 
 function HomeAdmin() {
   const questions = useLoaderData();

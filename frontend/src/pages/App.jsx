@@ -1,9 +1,8 @@
-import { Outlet, useNavigate, useLoaderData } from "react-router-dom";
+import { Outlet, useNavigate, useLoaderData, Navigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 import AdminNavbar from "../components/AdminNavbar";
-import Score from "../components/Score";
 
 function App() {
   const navigate = useNavigate();
@@ -34,7 +33,7 @@ function App() {
         <AdminNavbar />
 
         {isQuestEnd ? (
-          <Score />
+          <Navigate to="/score" />
         ) : (
           <>
             <Outlet />

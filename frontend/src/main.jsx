@@ -11,7 +11,9 @@ import AddFormQuestions from "./pages/AddFormQuestions";
 import ModifyFormQuestions from "./pages/ModifyFormQuestions";
 import Question from "./pages/Question";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AdminProvider } from "./components/AdminContext";
+import { AdminProvider } from "./contexts/AdminContext";
+import Score from "./pages/Score";
+import { ScoreProvider } from "./contexts/ScoreContext";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: "/score", element: <Score /> },
   { path: "/connexion", element: <ConnexionAdmin /> },
   {
     path: "/questions-admin",
@@ -59,7 +62,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AdminProvider>
-      <RouterProvider router={router} />
+      <ScoreProvider>
+        <RouterProvider router={router} />
+      </ScoreProvider>
     </AdminProvider>
   </React.StrictMode>
 );
