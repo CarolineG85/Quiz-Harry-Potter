@@ -61,7 +61,7 @@ function Question() {
             />
           );
         })}
-        <div>
+        <div className="point">
           <h1>{point} </h1>
         </div>
       </div>
