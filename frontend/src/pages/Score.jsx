@@ -40,7 +40,7 @@ function Score() {
             <div className="score">
               <p>
                 Tu as obtenu un score de <span>{score} </span>sur
-                <span> 10</span> !
+                <span> 10</span> !!!
               </p>
             </div>
             {showRestart && <RestartGame />}

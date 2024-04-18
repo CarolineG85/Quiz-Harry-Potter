@@ -71,3 +71,4 @@ export const loadQuestions = async () => {
 
 export default App;
 // Question is a page represented by the outlet component
+// Don't forget to db migrate!!

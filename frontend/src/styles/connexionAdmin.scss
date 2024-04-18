@@ -3,87 +3,18 @@
   min-width: 100vw;
   background-image: url("/maraudeur.jpg");
   background-size: cover;
-  // TODO reduce brightness of the image
 
-  .button-connexion-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    .button-accueil {
-      border-radius: 10px;
-      border: none;
-      color: #000000;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin-right: 20px;
-      margin-top: 10px;
-      cursor: pointer;
-      background-color: rgb(223, 200, 75);
-    }
-  }
-  .cnx-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .cnx-superposition {
+    background-color: rgba(0, 0, 0, 0.3);
+    min-height: 100vh;
+    min-width: 100vw;
 
-    .bien {
-      color: rgb(136, 37, 37);
-      // TODO font family like hp
-    }
-
-    .cnx-container {
+    .button-connexion-container {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      margin-left: 40px;
-      padding-bottom: 40px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
-      border: none;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      margin-right: 20px;
-      margin-top: 10px;
-      background-color: silver;
-      outline: none;
-      .cnx-title {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        color: antiquewhite;
-      }
-      .cnx-input {
-        height: 2em;
-        width: 100%;
-        border-radius: 10px;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        margin-right: 20px;
-        margin-top: 10px;
-        background-color: silver;
-        outline: none;
-        input {
-          background-color: transparent;
-        }
-      }
-    }
-    .button-submit-container {
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      .button-cnx {
+      justify-content: flex-end;
+      margin-bottom: 20px;
+
+      .button-accueil {
         border-radius: 10px;
         border: none;
         color: #000000;
@@ -95,12 +26,97 @@
         margin-right: 20px;
         margin-top: 10px;
         cursor: pointer;
-        background-color: seagreen;
+        background-color: rgb(223, 200, 75);
       }
     }
-  }
-  .incorrect {
-    text-align: center;
-    color: red;
+    .cnx-form-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      .cnx-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 40vh;
+        width: 30vw;
+        border: 1px solid rgb(99, 34, 34);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .bien {
+          color: rgb(99, 34, 34);
+          font-family: "Jolly Lodger", system-ui;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 4rem;
+        }
+
+        .cnx-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 60%;
+          height: 2em;
+          border-radius: 10px;
+          border: none;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          margin-top: 10px;
+          background-color: silver;
+
+          .cnx-input {
+            height: 2em;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+
+            background-color: silver;
+            outline: none;
+            input {
+              background-color: transparent;
+            }
+          }
+        }
+        // TODO modify cnx and input and retour button
+
+        .button-submit-container {
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 100%;
+          .button-cnx {
+            border-radius: 10px;
+            border: none;
+            color: #000000;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: seagreen;
+          }
+        }
+      }
+
+      .incorrect {
+        text-align: center;
+        color: red;
+      }
+    }
   }
 }
