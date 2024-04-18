@@ -21,7 +21,8 @@
       right: 0;
       margin: 40px;
       border-radius: 10px;
-      border: none;
+      border: 1px solid silver;
+
       color: rgb(32, 32, 32);
       padding: 10px 20px;
       text-align: center;
@@ -39,12 +40,10 @@
         rgb(76, 76, 158)
       );
       background-size: 200% 200%;
-      animation: wave 5s ease infinite;
+      animation:
+        wave 5s ease infinite,
+        scaleChange 3s ease-in-out infinite;
       transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
     }
   }
 }
@@ -58,5 +57,17 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes scaleChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
