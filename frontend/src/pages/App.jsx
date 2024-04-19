@@ -6,21 +6,15 @@ import AdminNavbar from "../components/AdminNavbar";
 function App() {
   const navigate = useNavigate();
   const questions = useLoaderData();
-  const [questArray, setQuestArray] = useState([]);
+  const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
+  const [questArray] = useState(shuffledQuestions.slice(0, 10));
   const [index, setIndex] = useState(0);
   const [isQuestEnd, setIsQuestEnd] = useState(false);
 
   useEffect(() => {
-    if (questions) {
-      const shuffledQuestions = [...questions].sort(() => 0.5 - Math.random());
-      setQuestArray(shuffledQuestions.slice(0, 10));
-    }
-  }, [questions]);
-
-  useEffect(() => {
-    if (questArray.length > 0 && index < questArray.length) {
+    if (index < questArray.length) {
       navigate(`/question/${questArray[index].id}`);
-    } else if (questArray.length > 0 && index === questArray.length) {
+    } else if (index === questArray.length) {
       setIsQuestEnd(true);
     }
   }, [index, navigate, questArray]);

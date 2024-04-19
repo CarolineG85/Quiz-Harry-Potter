@@ -6,7 +6,11 @@ export const ScoreContext = createContext();
 export function ScoreProvider({ children }) {
   const [score, setScore] = useState(0);
 
-  const value = useMemo(() => ({ score, setScore }), [score, setScore]);
+  const resetScore = () => {
+    setScore(0);
+  };
+
+  const value = useMemo(() => ({ score, setScore, resetScore }), [score]);
 
   return (
     <ScoreContext.Provider value={value}>{children}</ScoreContext.Provider>

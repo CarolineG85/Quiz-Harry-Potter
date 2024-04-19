@@ -55,7 +55,8 @@ VALUES (
     (
         "Quelle est la dernière épreuve du Tournoi des Trois Sorciers?"
     ),
-    ("Quel professeur enseigne l'Occlumancie à Harry?");
+    ("Quel professeur enseigne l'Occlumancie à Harry?"),
+    ("Comment s'appelle le directeur de l'école de Durmstrang?");
 
 CREATE TABLE `Answer` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
@@ -143,4 +144,8 @@ VALUES ("Pattenrond", 0, 1),
     ("Professeur Rogue", 1, 13),
     ("Professeur McGonagall", 0, 13),
     ("Professeur Lupin", 0, 13),
-    ("Professeur Flitwick", 0, 13);
+    ("Professeur Flitwick", 0, 13),
+    ("Igor Kourkouroff", 0, 14),
+    ("Igor Goukaroff", 0, 14),
+    ("Igor Karkaroff", 1, 14),
+    ("Iggor Karkarof", 0, 14);
