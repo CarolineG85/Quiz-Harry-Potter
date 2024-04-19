@@ -32,5 +32,3 @@ function AdminNavbar() {
 }
 
 export default AdminNavbar;
-
-// remplacer le bouton connexion par une image

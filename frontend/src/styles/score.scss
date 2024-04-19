@@ -20,19 +20,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid rgba(255, 255, 255, 1.5);
         border-radius: 10px;
-        width: 40%;
+        width: 40vw;
         padding: 0;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 1.5);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         animation: fadeIn 2s ease-in-out;
+
         .result {
           padding: 10px;
           h1 {
             color: silver;
+            font-family: "Jolly Lodger", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 3rem;
           }
         }
         .result-image {
@@ -48,16 +52,22 @@
           p {
             font-size: 1.5rem;
             color: silver;
+            font-family: "Jolly Lodger", system-ui;
+            font-style: normal;
+            font-size: 2rem;
 
             span {
               color: gold;
-              font-size: 2rem;
+              font-size: 2.5rem;
             }
           }
         }
       }
       .restart {
         .restart-but {
+          font-family: "Jolly Lodger", system-ui;
+          font-style: normal;
+          font-size: 1.5rem;
           border-radius: 10px;
           border: 1px solid silver;
           color: silver;
@@ -65,7 +75,6 @@
           text-align: center;
           text-decoration: none;
           display: inline-block;
-          font-size: 1rem;
           margin: 2.5rem;
           cursor: pointer;
           background: linear-gradient(

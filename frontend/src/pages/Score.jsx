@@ -3,10 +3,19 @@ import { useEffect, useState, useContext } from "react";
 import { ScoreContext } from "../contexts/ScoreContext";
 
 function RestartGame() {
+  const { resetScore } = useContext(ScoreContext);
+
+  const handleResetscore = () => {
+    resetScore();
+  };
   return (
     <div className="restart">
       <NavLink to="/">
-        <button type="button" className="restart-but">
+        <button
+          type="button"
+          className="restart-but"
+          onClick={handleResetscore}
+        >
           Rejouer
         </button>
       </NavLink>
@@ -40,7 +49,7 @@ function Score() {
             <div className="score">
               <p>
                 Tu as obtenu un score de <span>{score} </span>sur
-                <span> 10</span> !
+                <span> 10</span> !!!
               </p>
             </div>
             {showRestart && <RestartGame />}
