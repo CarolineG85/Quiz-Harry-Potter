@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ScoreContext } from "../contexts/ScoreContext";
 
 import AnswersButton from "../components/AnswersButton";
 
@@ -12,6 +13,11 @@ function Question() {
 
   const [clickedButtons, setClickedButtons] = useState([]);
   const [prevId, setPrevId] = useState(null);
+  const { resetScore } = useContext(ScoreContext);
+
+  useEffect(() => {
+    resetScore();
+  }, []);
 
   useEffect(() => {
     if (id !== prevId) {

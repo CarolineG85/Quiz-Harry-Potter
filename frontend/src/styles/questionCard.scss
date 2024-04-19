@@ -1,42 +1,54 @@
 .question-space {
+  height: 12rem;
+  width: 15rem;
+  border: 1px solid rgba(255, 255, 255, 1.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 20%;
-  margin: 0px;
-  .button-card-container {
-    display: flex;
-    justify-content: flex-end;
-    height: 8%;
-    width: 67%;
+  align-items: center;
+  transition: transform 0.3s ease;
 
-    .button-card {
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      img {
-        height: 100%;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .butCard-cont {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    .button-card-container {
+      .button-card {
+        border: none;
+        background-color: transparent;
+        padding: 2px;
+        img {
+          height: 1.5rem;
+        }
       }
     }
   }
+  .quest-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-align: center;
+      text-decoration: none;
+      .question-card-container {
+        .question-card {
+          color: rgb(99, 34, 34);
 
-  a {
-    text-decoration: none;
-    color: black;
-    .question-card {
-      display: flex;
-      background-color: silver;
-      flex-wrap: wrap;
-      border: 1px solid silver;
-      border-radius: 5px;
-      width: 10em;
-      height: 10em;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      cursor: pointer;
+          font-family: "Jolly Lodger", system-ui;
+          font-weight: 400;
+          font-size: 1.5rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: pre-wrap;
+          width: 12rem;
+        }
+      }
     }
   }
 }

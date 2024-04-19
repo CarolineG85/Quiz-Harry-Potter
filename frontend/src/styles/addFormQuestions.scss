@@ -20,6 +20,14 @@
       margin-right: 20px;
       margin-top: 10px;
       cursor: pointer;
+      font-family: "Jolly Lodger", system-ui;
+      font-weight: 400;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -37,8 +45,8 @@
       label {
         margin-top: 20px;
         margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: bold;
+        font-family: "Jolly Lodger", system-ui;
+        font-size: 1.5rem;
         color: antiquewhite;
       }
       textarea {
@@ -122,6 +130,14 @@
         margin-top: 10px;
         cursor: pointer;
         background-color: rgb(179, 63, 63);
+        font-family: "Jolly Lodger", system-ui;
+        font-weight: 400;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }

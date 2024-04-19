@@ -20,19 +20,24 @@ function QuestionCard({ question }) {
   };
   return (
     <div className="question-space">
-      <div className="button-card-container">
-        <button
-          type="button"
-          className="button-card"
-          onClick={handleDeleteQuestion}
-        >
-          <img src="/close-button.png" alt="annuler" />
-        </button>
+      <div className="butCard-cont">
+        <div className="button-card-container">
+          <button
+            type="button"
+            className="button-card"
+            onClick={handleDeleteQuestion}
+          >
+            <img src="/close-button.png" alt="supprimer" />
+          </button>
+        </div>
       </div>
-
-      <Link to={`/questions-admin/modify/${question.id}`}>
-        <div className="question-card">{question.content}</div>
-      </Link>
+      <div className="quest-cont">
+        <Link to={`/questions-admin/modify/${question.id}`}>
+          <div className="question-card-container">
+            <div className="question-card">{question.content}</div>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
@@ -43,3 +48,5 @@ QuestionCard.propTypes = {
   }).isRequired,
 };
 export default QuestionCard;
+// TODO: Add a modal to confirm the deletion of a question
+// TODO: Change the system by adding a put and delete button in the QuestionCard component?
