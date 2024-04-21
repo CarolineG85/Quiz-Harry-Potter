@@ -46,7 +46,7 @@ function AddFormQuestions() {
           <label htmlFor="content">Question</label>
           <textarea
             name="content"
-            maxLength="500"
+            maxLength="255"
             placeholder="Question à ajouter"
             required
             value={question && question.content}
