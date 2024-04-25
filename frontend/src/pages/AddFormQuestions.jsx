@@ -1,10 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import AnswersForm from "../components/AnswersForm";
 
 function AddFormQuestions() {
-  const navigate = useNavigate();
   const [question, setQuestion] = useState();
+  const [questionId] = useState(); // add setQuestionId
+  const [answers, setAnswers] = useState([]);
 
   const handleCreate = async (event) => {
     event.preventDefault();
@@ -21,17 +23,18 @@ function AddFormQuestions() {
       );
       if (response.status === 201) {
         setQuestion(questionToCreate);
-        setTimeout(() => {
-          navigate("/home-admin");
-        }, 1000);
+        // setQuestionId(response.data.insertId.insertId);
+        // console.log(
+        //   "id de la question créée: ",
+        //   response.data.insertId.insertId
+        // );
       } else {
         console.error("Error creating question: ", response);
       }
     } catch (error) {
-      console.error(error);
+      console.error(error); // TODO remplacer par des popups avec toastify
     }
   };
-
   return (
     <div className="form-add-page">
       <div className="button-home-container">
@@ -52,65 +55,34 @@ function AddFormQuestions() {
             value={question && question.content}
           />
         </div>
-        {/* <div className="add-answers">
+        <div className="answers">
           <h3>Réponses</h3>
-          <div className="add-raw-one">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 1</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer1 && answer1.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 2</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer2 && answer2.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-          </div>
-          <div className="add-raw-two">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 3</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer3 && answer3.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 4</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer4 && answer4.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-          </div>
-        </div> */}
+
+          <AnswersForm
+            réponse={1}
+            questionId={questionId}
+            setAnswers={setAnswers}
+            answers={answers}
+          />
+          {/* <AnswersForm
+            réponse={2}
+            questionId={questionId}
+            setAnswers={setAnswers}
+            answers={answers}
+          />
+          <AnswersForm
+            réponse={3}
+            questionId={questionId}
+            setAnswers={setAnswers}
+            answers={answers}
+          />
+          <AnswersForm
+            réponse={4}
+            questionId={questionId}
+            setAnswers={setAnswers}
+            answers={answers}
+          /> */}
+        </div>
         <div className="button-add-container">
           <button className="button-add" type="submit">
             Ajouter
@@ -121,6 +93,5 @@ function AddFormQuestions() {
   );
 }
 
-// TODO régler le problème des réponses
-
 export default AddFormQuestions;
+// TODO: trouver un moyen de récupérer l'id de la question créée pour l'envoyer à la création des réponses, garder composants comme ça ou revenir à ma logique d'avant?
