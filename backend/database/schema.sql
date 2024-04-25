@@ -61,7 +61,7 @@ VALUES (
 CREATE TABLE `Answer` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `contentAnswer` VARCHAR(250) NOT NULL,
-  `isTheRightAnswer` BOOLEAN NOT NULL DEFAULT 0,
+  `isTheRightAnswer` BOOLEAN DEFAULT 0,
   `question_id` INT, CONSTRAINT `fk_answer_question_id` FOREIGN KEY (`question_id`) REFERENCES `Question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 
 

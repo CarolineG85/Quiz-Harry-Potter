@@ -35,7 +35,34 @@
     margin: 8rem;
     width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .question-page-container {
+    .question-answer-container {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    .answers {
+      padding: 0;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .question-page-container {
+    .question-answer-container {
+      font-size: 2rem;
+      width: 80%;
+      height: 80%;
+    }
+
+    .answers {
+      width: 80%;
+      margin: 1.5rem;
+      gap: calc(1rem + 1vw);
+    }
   }
 }
