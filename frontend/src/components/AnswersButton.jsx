@@ -44,7 +44,6 @@ function AnswersButton({
 AnswersButton.propTypes = {
   contentAnswer: PropTypes.string.isRequired,
   result: PropTypes.number.isRequired,
-
   clickedButtons: PropTypes.arrayOf(PropTypes.string).isRequired,
   setClickedButtons: PropTypes.func.isRequired,
 };

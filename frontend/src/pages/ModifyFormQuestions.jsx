@@ -1,15 +1,15 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
+import ModifyAnswer from "../components/ModifyAnswer";
 // TODO add bearer token to the request and create a component to handle each answer...
 function ModifyFormQuestions() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [question, setQuestion] = useState();
-  // const [answer1, setAnswer1] = useState();
-  // const [answer2, setAnswer2] = useState();
-  // const [answer3, setAnswer3] = useState();
-  // const [answer4, setAnswer4] = useState();
+  const [setAnswerModify] = useState([]); // answerModify,
+  const [answers, setAnswers] = useState([]);
 
   const getQuestion = async () => {
     try {
@@ -22,24 +22,21 @@ function ModifyFormQuestions() {
     }
   };
 
-  // const getAnswers = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `${import.meta.env.VITE_BACKEND_URL}/api/answers-question/${id}`
-  //     );
-  //     setAnswer1(response.data[0]);
-  //     setAnswer2(response.data[1]);
-  //     setAnswer3(response.data[2]);
-  //     setAnswer4(response.data[3]);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const getAnswers = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/answers-question/${id}`
+      );
+      setAnswers(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     getQuestion();
-    // getAnswers();
-  }, []);
+    getAnswers();
+  }, [id]);
 
   const handleEdit = async (event) => {
     event.preventDefault();
@@ -57,40 +54,38 @@ function ModifyFormQuestions() {
       );
       if (response.status === 200) {
         setQuestion(questionToUpdate);
-        setTimeout(() => {
-          navigate("/home-admin");
-        }, 1000);
       }
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec toastify
+      // TODO remplacer par des popups avec toastify
     }
 
-    // const answerToUpdate = {
-    //   contentAnswer: event.target.contentAnswer.value,
-    //   isTheRightAnswer: event.target.isTheRightAnswer.checked,
-    // };
+    const answerToUpdate = {
+      contentAnswer: event.target.contentAnswer.value,
+      isTheRightAnswer: event.target.isTheRightAnswer.checked,
+    };
 
-    // try {
-    //   const response = await axios.put(
-    //     `${import.meta.env.VITE_BACKEND_URL}/api/answers/${answer1.id}`,
-    //     answerToUpdate
-    //   );
+    try {
+      const response = await axios.put(
+        `${import.meta.env.VITE_BACKEND_URL}/api/answers/${id}`,
+        answerToUpdate,
 
-    //   if (response.status === 200) {
-    //     setAnswer1(answerToUpdate);
-    //     setAnswer2(answerToUpdate);
-    //     setAnswer3(answerToUpdate);
-    //     setAnswer4(answerToUpdate);
-    //     setTimeout(() => {
-    //       navigate("/home-admin");
-    //     }, 1000);
-    //   } else {
-    //     alert("Erreur lors de la modification"); // TODO remplacer par des popups
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      );
+
+      if (response.status === 200) {
+        setAnswerModify(answerToUpdate);
+        setTimeout(() => {
+          navigate("/home-admin");
+        }, 1000);
+      } else {
+        // alert("Erreur lors de la modification"); // TODO remplacer par des popups
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -113,65 +108,21 @@ function ModifyFormQuestions() {
             defaultValue={question && question.content}
           />
         </div>
-        {/* <div className="modify-answers">
+        <div className="modify-answers">
           <h3>Réponses</h3>
-          <div className="modify-raw-one">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 1</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer1 && answer1.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 2</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer2 && answer2.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
+          <div className="modify-ans-grid">
+            {answers.map((answer, index) => {
+              return (
+                <ModifyAnswer
+                  key={answer.id}
+                  numéro={index + 1}
+                  answerContent={answer.contentAnswer}
+                  isRight={answer.isTheRightAnswer}
+                />
+              );
+            })}
           </div>
-          <div className="modify-raw-two">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 3</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer3 && answer3.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 4</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer4 && answer4.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-          </div>
-        </div> */}
+        </div>
         <div className="button-modify-container">
           <button className="button-modify" type="submit">
             Modifier
