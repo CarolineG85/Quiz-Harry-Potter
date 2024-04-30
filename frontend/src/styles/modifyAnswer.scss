@@ -44,6 +44,7 @@
       color: green;
       border: 1px solid green;
       background-color: lightgreen;
+      border-radius: 5px;
       width: fit-content;
       padding: 5px;
     }
@@ -54,12 +55,13 @@
       background-color: lightcoral;
       width: fit-content;
       padding: 5px;
+      border-radius: 5px;
     }
     .button-modify {
       margin: 1rem;
       border-radius: 10px;
       border: none;
-      color: #000000;
+      color: var(--button-color);
       padding: 10px 20px;
       text-align: center;
       text-decoration: none;
