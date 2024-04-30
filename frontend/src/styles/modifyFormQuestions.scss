@@ -66,81 +66,42 @@
       }
     }
     .modify-answers {
-      width: 40%;
-      margin-left: 40px;
-
-      label {
-        color: antiquewhite;
-        font-size: 20px;
-        font-weight: bold;
-        padding-bottom: 20px;
-      }
       h3 {
         color: antiquewhite;
-        padding-bottom: 20px;
       }
-      .each-answer {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-
-        .input-ans {
-          border-radius: 5px;
-          border: none;
-          outline: none;
-          height: 1.5em;
-          padding: 8px;
-          background-color: silver;
-        }
-        .checkbox {
-          margin-top: 10px;
-          color: antiquewhite;
-          padding: 5px;
-        }
-
-        //TODO changing checkbox's style
-      }
-
-      .modify-raw-one {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-      }
-      .modify-raw-two {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-      }
-    }
-    .button-modify-container {
-      display: flex;
-      justify-content: flex-end;
-      width: 60%;
-      .button-modify {
-        margin: 40px;
-        border-radius: 10px;
-        border: none;
-        color: #000000;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-right: 20px;
-        margin-top: 10px;
-        cursor: pointer;
-        background-color: rgb(76, 76, 158);
-        font-family: "Jolly Lodger", system-ui;
-        font-weight: 400;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.1);
-        }
+      .modify-ans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+        gap: 4rem;
       }
     }
   }
 }
+.button-modify-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  .button-modify {
+    margin: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: rgb(76, 76, 158);
+    font-family: "Jolly Lodger", system-ui;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
 
-// TODO box-shadow...
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
