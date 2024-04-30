@@ -1,0 +1,80 @@
+.modify {
+  width: 100%;
+  margin-left: 2rem;
+  .answer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.2rem;
+    label {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: "Jolly Lodger", system-ui;
+      font-size: 1.5rem;
+      color: antiquewhite;
+    }
+
+    .input-ans-mod {
+      width: 60%;
+      border-radius: 10px;
+      border: none;
+      padding: 5px;
+      text-align: center;
+      font-size: 1rem;
+      background-color: silver;
+      outline: none;
+      resize: none;
+      min-height: 2rem;
+      overflow: auto;
+    }
+    .checkbox-mod {
+      display: flex;
+      color: antiquewhite;
+      margin-top: 10px;
+
+      p {
+        padding-left: 5px;
+      }
+    }
+  }
+  .but-mess-mod-cont {
+    display: flex;
+    align-items: center;
+    .messCo {
+      z-index: 1;
+      color: green;
+      border: 1px solid green;
+      background-color: lightgreen;
+      width: fit-content;
+      padding: 5px;
+    }
+    .messEr {
+      z-index: 1;
+      color: red;
+      border: 1px solid red;
+      background-color: lightcoral;
+      width: fit-content;
+      padding: 5px;
+    }
+    .button-modify {
+      margin: 1rem;
+      border-radius: 10px;
+      border: none;
+      color: #000000;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 20px;
+      cursor: pointer;
+      background-color: rgb(76, 76, 158);
+      font-family: "Jolly Lodger", system-ui;
+      font-weight: 400;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

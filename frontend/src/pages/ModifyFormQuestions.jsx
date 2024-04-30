@@ -1,45 +1,50 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
-// TODO add bearer token to the request and create a component to handle each answer...
-function ModifyFormQuestions() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [question, setQuestion] = useState();
-  // const [answer1, setAnswer1] = useState();
-  // const [answer2, setAnswer2] = useState();
-  // const [answer3, setAnswer3] = useState();
-  // const [answer4, setAnswer4] = useState();
+import { Link, useParams } from "react-router-dom"; // Importing necessary dependencies, useParams is a hook from React Router to access the parameters of the current route
+import axios from "axios"; // A library for making HTTP requests
+import { useState, useEffect } from "react"; // React hooks for managing state and side effects
 
+import ModifyAnswer from "../components/ModifyAnswer"; // Component for modifying an answer
+
+// ModifyFormQuestions is a component that allows the user to modify a question and its answers.
+// It fetches the question and its answers from the server and displays a form for modifying them.
+function ModifyFormQuestions() {
+  // Getting the id parameter from the URL
+  const { id } = useParams();
+  // State for the question and its id
+  const [question, setQuestion] = useState();
+  const [questionId, setQuestionId] = useState();
+  // State to get the answers
+  const [answers, setAnswers] = useState([]);
+
+  // Function for fetching the question from the server
   const getQuestion = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/questions/${id}`
       );
       setQuestion(response.data);
+      setQuestionId(response.data.id);
     } catch (error) {
       console.error(error);
     }
   };
 
-  // const getAnswers = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `${import.meta.env.VITE_BACKEND_URL}/api/answers-question/${id}`
-  //     );
-  //     setAnswer1(response.data[0]);
-  //     setAnswer2(response.data[1]);
-  //     setAnswer3(response.data[2]);
-  //     setAnswer4(response.data[3]);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  // Function for fetching the answers from the server
+  const getAnswers = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/answers-question/${id}`
+      );
+      setAnswers(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+  // Using the useEffect hook to fetch the question and answers when the component mounts
   useEffect(() => {
     getQuestion();
-    // getAnswers();
-  }, []);
+    getAnswers();
+  }, [id]);
 
   const handleEdit = async (event) => {
     event.preventDefault();
@@ -57,42 +62,14 @@ function ModifyFormQuestions() {
       );
       if (response.status === 200) {
         setQuestion(questionToUpdate);
-        setTimeout(() => {
-          navigate("/home-admin");
-        }, 1000);
       }
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification"); // TODO remplacer par des popups avec toastify
+      // TODO remplacer par des popups avec toastify
     }
-
-    // const answerToUpdate = {
-    //   contentAnswer: event.target.contentAnswer.value,
-    //   isTheRightAnswer: event.target.isTheRightAnswer.checked,
-    // };
-
-    // try {
-    //   const response = await axios.put(
-    //     `${import.meta.env.VITE_BACKEND_URL}/api/answers/${answer1.id}`,
-    //     answerToUpdate
-    //   );
-
-    //   if (response.status === 200) {
-    //     setAnswer1(answerToUpdate);
-    //     setAnswer2(answerToUpdate);
-    //     setAnswer3(answerToUpdate);
-    //     setAnswer4(answerToUpdate);
-    //     setTimeout(() => {
-    //       navigate("/home-admin");
-    //     }, 1000);
-    //   } else {
-    //     alert("Erreur lors de la modification"); // TODO remplacer par des popups
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
 
+  // The component returns a form for modifying the question and a list of ModifyAnswer components for modifying the answers
   return (
     <div className="form-modify-page">
       <div className="button-home-container">
@@ -113,75 +90,30 @@ function ModifyFormQuestions() {
             defaultValue={question && question.content}
           />
         </div>
-        {/* <div className="modify-answers">
-          <h3>Réponses</h3>
-          <div className="modify-raw-one">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 1</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer1 && answer1.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 2</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer2 && answer2.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-          </div>
-          <div className="modify-raw-two">
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 3</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer3 && answer3.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-            <div className="each-answer">
-              <label htmlFor="contentAnswer">Réponse 4</label>
-              <input
-                className="input-ans"
-                type="text"
-                name="contentAnswer"
-                defaultValue={answer4 && answer4.contentAnswer}
-              />
-              <div className="checkbox">
-                <input type="checkbox" name="isTheRightAnswer" value={1} />
-                C'est la bonne réponse
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div className="button-modify-container">
           <button className="button-modify" type="submit">
             Modifier
           </button>
         </div>
       </form>
+      <div className="modify-answers">
+        <div className="modify-ans-grid">
+          {answers.map((answer, index) => {
+            return (
+              <ModifyAnswer
+                key={answer.id}
+                numéro={index + 1}
+                answerContent={answer.contentAnswer}
+                isRight={answer.isTheRightAnswer}
+                answerId={answer.id}
+                questionId={questionId}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
 
 export default ModifyFormQuestions;
-
-// TODO rajouter default value dans les input
