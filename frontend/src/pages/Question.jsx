@@ -48,7 +48,8 @@ function Question() {
       const res = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/answers-question/${id}`
       );
-      setAnswers(res.data); // Updating the answers with the data from the response
+      const shuffledAnswers = res.data.sort(() => Math.random() - 0.5);
+      setAnswers(shuffledAnswers); // Updating the answers with the shuffled array
     } catch (error) {
       console.error(error); // If an error occurs, log it
     }

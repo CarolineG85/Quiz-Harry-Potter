@@ -75,34 +75,33 @@
         gap: 4rem;
       }
     }
+  }
+}
+.button-modify-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  .button-modify {
+    margin: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: rgb(76, 76, 158);
+    font-family: "Jolly Lodger", system-ui;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
 
-    .button-modify-container {
-      display: flex;
-      justify-content: flex-end;
-      width: 60%;
-      .button-modify {
-        margin: 40px;
-        border-radius: 10px;
-        border: none;
-        color: #000000;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-right: 20px;
-        margin-top: 10px;
-        cursor: pointer;
-        background-color: rgb(76, 76, 158);
-        font-family: "Jolly Lodger", system-ui;
-        font-weight: 400;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

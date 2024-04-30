@@ -31,3 +31,4 @@ ModifyAnswer.propTypes = {
   isRight: PropTypes.number.isRequired,
 };
 export default ModifyAnswer;
+// see usestate to put answers in an array like question.jsx...
