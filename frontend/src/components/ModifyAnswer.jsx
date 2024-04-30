@@ -55,10 +55,19 @@ function ModifyAnswer({
         setAnswerModify(answerToUpdate);
         setMessCorrect("Modification réussie");
         setIsOk(true);
+        // Make the success message disappear after 5 seconds
+        setTimeout(() => {
+          setIsOk(false);
+          setMessCorrect("");
+        }, 5000);
       } else {
         // If the request fails, display an error message
         setIsNotOk(true); // TODO replace with popups
         setMessError("Erreur lors de la modification");
+        setTimeout(() => {
+          setIsNotOk(false);
+          setMessError("");
+        }, 5000);
       }
     } catch (error) {
       console.error(error);

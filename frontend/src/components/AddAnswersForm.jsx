@@ -1,11 +1,21 @@
 // Importing necessary libraries and components
 import PropTypes from "prop-types";
 import axios from "axios";
+import { useState } from "react";
 
 // Function component for adding answers
 function AnswersForm({ réponse, questionId, setAnswers }) {
   // Storing the questionId in a local variable
   const questId = questionId;
+
+  // State for the success message
+  const [messCorrect, setMessCorrect] = useState("");
+  // State for the success status
+  const [isOk, setIsOk] = useState(false);
+  // State for the error message
+  const [messError, setMessError] = useState("");
+  // State for the error status
+  const [isNotOk, setIsNotOk] = useState(false);
 
   // Function to handle the creation of an answer
   const handleCreateAnswer = async (event) => {
@@ -31,8 +41,22 @@ function AnswersForm({ réponse, questionId, setAnswers }) {
       // If the response status is 201, add the new answer to the answers state
       if (response.status === 201) {
         setAnswers((prevAnswers) => [...prevAnswers, answerToCreate]);
+        setIsOk(true);
+        setMessCorrect("Création réussie");
+        // Make the success message disappear after 5 seconds
+        setTimeout(() => {
+          setIsOk(false);
+          setMessCorrect("");
+        }, 5000);
       } else {
         console.error("Error creating answers: ", response);
+        setIsNotOk(true);
+        setMessError("Erreur lors de la création");
+
+        setTimeout(() => {
+          setIsNotOk(false);
+          setMessError("");
+        }, 5000);
       }
     } catch (error) {
       console.error(error); // TODO replace with toastify popups
@@ -41,10 +65,10 @@ function AnswersForm({ réponse, questionId, setAnswers }) {
 
   // Rendering the component
   return (
-    <form onSubmit={handleCreateAnswer}>
+    <form className="add" onSubmit={handleCreateAnswer}>
       <div className="answer-cont">
         <label htmlFor="contentAnswer">Réponse {réponse} </label>
-        <input
+        <textarea
           className="input-ans"
           type="text"
           name="contentAnswer"
@@ -53,13 +77,15 @@ function AnswersForm({ réponse, questionId, setAnswers }) {
         />
         <div className="checkbox">
           <input type="checkbox" name="isTheRightAnswer" />
-          C'est la bonne réponse
+          <p>C'est la bonne réponse</p>
         </div>
       </div>
       <div className="but-mess-add-cont">
         <button className="button-add" type="submit">
           Ajouter
         </button>
+        {isOk && <p className="messCo"> {messCorrect}</p>}
+        {isNotOk && <p className="messEr"> {messError}</p>}
       </div>
     </form>
   );

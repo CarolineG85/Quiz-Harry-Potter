@@ -11,7 +11,7 @@
     .button-homeAd {
       border-radius: 10px;
       border: none;
-      color: #000000;
+      color: var(--button-color);
       padding: 10px 20px;
       text-align: center;
       text-decoration: none;
@@ -64,63 +64,43 @@
         background-color: silver;
         outline: none;
       }
-    }
-    .add-answers {
-      width: 40%;
-      margin-left: 40px;
-
-      label {
-        color: antiquewhite;
-        font-size: 20px;
-        font-weight: bold;
-        padding-bottom: 20px;
+      .messCo {
+        position: absolute;
+        left: 50%; // TODO change position when responsive
+        bottom: 65%;
+        z-index: 100;
+        color: green;
+        border: 1px solid green;
+        border-radius: 5px;
+        background-color: lightgreen;
+        width: fit-content;
+        padding: 5px;
       }
-      h3 {
-        color: antiquewhite;
-        padding-bottom: 20px;
-      }
-      .each-answer {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-
-        .input-ans {
-          border-radius: 5px;
-          border: none;
-          outline: none;
-          height: 1.5em;
-          padding: 8px;
-          background-color: silver;
-        }
-        .checkbox {
-          margin-top: 10px;
-          color: antiquewhite;
-          padding: 5px;
-        }
-
-        //TODO changing checkbox's style
-      }
-
-      .add-raw-one {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-      }
-      .add-raw-two {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
+      .messEr {
+        position: absolute;
+        left: 50%; // TODO change position when responsive
+        bottom: 65%;
+        z-index: 100;
+        color: red;
+        border: 1px solid red;
+        background-color: lightcoral;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 5px;
       }
     }
+
     .button-add-container {
       display: flex;
       justify-content: flex-end;
-      width: 60%;
+      width: 50%;
+      height: fit-content;
+
       .button-add {
         margin: 40px;
         border-radius: 10px;
         border: none;
-        color: #000000;
+        color: var(--button-color);
         padding: 10px 20px;
         text-align: center;
         text-decoration: none;
@@ -139,8 +119,44 @@
           transform: scale(1.1);
         }
       }
+      .info-question,
+      .info-question-none {
+        position: absolute;
+        right: 30%;
+        // TODO change position when responsive
+      }
+      .info-question {
+        background-color: antiquewhite;
+        color: var(--button-color);
+        border: 1px solid antiquewhite;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+        animation: blink 5s linear infinite; // Apply the blinking animation
+      }
+      .info-question-none {
+        display: none;
+      }
+    }
+  }
+  .answers {
+    width: 50%;
+    .add-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 4rem;
     }
   }
 }
 
-// TODO box-shadow...
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
