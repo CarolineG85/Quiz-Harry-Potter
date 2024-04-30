@@ -1,17 +1,21 @@
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom"; // Importing necessary dependencies, useParams is a hook from React Router to access the parameters of the current route
+import axios from "axios"; // A library for making HTTP requests
+import { useState, useEffect } from "react"; // React hooks for managing state and side effects
 
-import ModifyAnswer from "../components/ModifyAnswer";
-// TODO add bearer token to the request and create a component to handle each answer...
+import ModifyAnswer from "../components/ModifyAnswer"; // Component for modifying an answer
+
+// ModifyFormQuestions is a component that allows the user to modify a question and its answers.
+// It fetches the question and its answers from the server and displays a form for modifying them.
 function ModifyFormQuestions() {
+  // Getting the id parameter from the URL
   const { id } = useParams();
-
+  // State for the question and its id
   const [question, setQuestion] = useState();
   const [questionId, setQuestionId] = useState();
-
+  // State to get the answers
   const [answers, setAnswers] = useState([]);
 
+  // Function for fetching the question from the server
   const getQuestion = async () => {
     try {
       const response = await axios.get(
@@ -24,6 +28,7 @@ function ModifyFormQuestions() {
     }
   };
 
+  // Function for fetching the answers from the server
   const getAnswers = async () => {
     try {
       const response = await axios.get(
@@ -35,6 +40,7 @@ function ModifyFormQuestions() {
     }
   };
 
+  // Using the useEffect hook to fetch the question and answers when the component mounts
   useEffect(() => {
     getQuestion();
     getAnswers();
@@ -63,6 +69,7 @@ function ModifyFormQuestions() {
     }
   };
 
+  // The component returns a form for modifying the question and a list of ModifyAnswer components for modifying the answers
   return (
     <div className="form-modify-page">
       <div className="button-home-container">
@@ -110,5 +117,3 @@ function ModifyFormQuestions() {
 }
 
 export default ModifyFormQuestions;
-
-// TODO rajouter default value dans les input
