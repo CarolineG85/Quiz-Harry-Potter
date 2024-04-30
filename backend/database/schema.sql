@@ -14,6 +14,7 @@ VALUES (
         "carolinehp@gmail.com", "welcometoharry"
     );
 
+
 CREATE TABLE `Question` (
     `id` INT PRIMARY KEY AUTO_INCREMENT, `content` VARCHAR(500) NOT NULL
 );
@@ -47,13 +48,22 @@ VALUES (
     ),
     (
         "Quel sort permet de créer de l'eau?"
-    );
+    ),
+    (
+        "Quel sort permet d'ouvrir une porte?"
+    ),
+    (
+        "Quelle est la dernière épreuve du Tournoi des Trois Sorciers?"
+    ),
+    ("Quel professeur enseigne l'Occlumancie à Harry?"),
+    ("Comment s'appelle le directeur de l'école de Durmstrang?"),
+    ("À quelques années près, quel âge a Dumbledore?");
 
 CREATE TABLE `Answer` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `contentAnswer` VARCHAR(250) NOT NULL,
-  `isTheRightAnswer` BOOLEAN NOT NULL DEFAULT 0,
-  `question_id` INT NOT NULL, CONSTRAINT `fk_answer_question_id` FOREIGN KEY (`question_id`) REFERENCES `Question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `isTheRightAnswer` BOOLEAN DEFAULT 0,
+  `question_id` INT, CONSTRAINT `fk_answer_question_id` FOREIGN KEY (`question_id`) REFERENCES `Question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 
 
 );
@@ -123,4 +133,24 @@ VALUES ("Pattenrond", 0, 1),
     ("Aguamenti", 1, 10),
     ("Alohomora", 0, 10),
     ("Accio", 0, 10),
-    ("Avada Kedavra", 0, 10);
+    ("Avada Kedavra", 0, 10),
+    ("Alohomora", 1, 11),
+    ("Accio", 0, 11),
+    ("Avada Kedavra", 0, 11),
+    ("Aguamenti", 0, 11),
+    ("Le labyrinthe", 1, 12),
+    ("Le bal de Noël", 0, 12),
+    ("Le dragon", 0, 12),
+    ("Le lac", 0, 12),
+    ("Professeur Rogue", 1, 13),
+    ("Professeur McGonagall", 0, 13),
+    ("Professeur Lupin", 0, 13),
+    ("Professeur Flitwick", 0, 13),
+    ("Igor Kourkouroff", 0, 14),
+    ("Igor Goukaroff", 0, 14),
+    ("Igor Karkaroff", 1, 14),
+    ("Iggor Karkarof", 0, 14),
+    ("300 ans", 0, 15),
+    ("150 ans", 1, 15),
+    ("110 ans", 0, 15),
+    ("800 ans", 0, 15);

@@ -1,0 +1,162 @@
+.form-add-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("/letter-hogwarts.jpg");
+  background-size: cover;
+
+  .button-home-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .button-homeAd {
+      border-radius: 10px;
+      border: none;
+      color: var(--button-color);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-family: "Jolly Lodger", system-ui;
+      font-weight: 400;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .add-form {
+    display: flex;
+    flex-direction: column;
+
+    .add-question {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-left: 40px;
+      padding-bottom: 40px;
+
+      label {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: "Jolly Lodger", system-ui;
+        font-size: 1.5rem;
+        color: antiquewhite;
+      }
+      textarea {
+        height: 6.25em;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        resize: none;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        background-color: silver;
+        outline: none;
+      }
+      .messCo {
+        position: absolute;
+        left: 50%; // TODO change position when responsive
+        bottom: 65%;
+        z-index: 100;
+        color: green;
+        border: 1px solid green;
+        border-radius: 5px;
+        background-color: lightgreen;
+        width: fit-content;
+        padding: 5px;
+      }
+      .messEr {
+        position: absolute;
+        left: 50%; // TODO change position when responsive
+        bottom: 65%;
+        z-index: 100;
+        color: red;
+        border: 1px solid red;
+        background-color: lightcoral;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 5px;
+      }
+    }
+
+    .button-add-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
+      height: fit-content;
+
+      .button-add {
+        margin: 40px;
+        border-radius: 10px;
+        border: none;
+        color: var(--button-color);
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: rgb(179, 63, 63);
+        font-family: "Jolly Lodger", system-ui;
+        font-weight: 400;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      .info-question,
+      .info-question-none {
+        position: absolute;
+        right: 30%;
+        // TODO change position when responsive
+      }
+      .info-question {
+        background-color: antiquewhite;
+        color: var(--button-color);
+        border: 1px solid antiquewhite;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+        animation: blink 5s linear infinite; // Apply the blinking animation
+      }
+      .info-question-none {
+        display: none;
+      }
+    }
+  }
+  .answers {
+    width: 50%;
+    .add-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 4rem;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

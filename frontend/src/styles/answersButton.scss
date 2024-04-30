@@ -1,0 +1,30 @@
+.ansbut-container {
+  .ansbutton {
+    font-family: "Freehand", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: silver;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 1.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ansbut-container {
+    .ansbutton {
+      font-size: 1.5rem;
+    }
+  }
+}

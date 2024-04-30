@@ -1,0 +1,40 @@
+.adminNavbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+
+  .admin-buttons {
+    display: flex;
+    justify-content: space-around;
+    button {
+      border-radius: 10px;
+      border: none;
+      color: var(--button-color);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-family: "Jolly Lodger", system-ui;
+      font-size: 1.5rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .button-add {
+      background-color: rgb(231, 20, 20);
+    }
+    .button-connexion {
+      background-color: rgb(248, 178, 49);
+    }
+    .button-deconnexion {
+      background-color: seagreen;
+    }
+  }
+}

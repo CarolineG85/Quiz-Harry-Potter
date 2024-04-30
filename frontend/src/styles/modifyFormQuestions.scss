@@ -1,0 +1,106 @@
+.form-modify-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("/letter-hogwarts.jpg");
+  background-size: cover;
+
+  .button-home-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .button-homeAd {
+      border-radius: 10px;
+      border: none;
+      color: var(--button-color);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-family: "Jolly Lodger", system-ui;
+      font-weight: 400;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .modify-form {
+    display: flex;
+    flex-direction: column;
+
+    .modify-question {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-left: 40px;
+      padding-bottom: 40px;
+
+      label {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: "Jolly Lodger", system-ui;
+        font-size: 1.5rem;
+        color: antiquewhite;
+      }
+      textarea {
+        height: 6.25em;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        resize: none;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-top: 10px;
+        background-color: silver;
+        outline: none;
+      }
+    }
+  }
+
+  .button-modify-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    .button-modify {
+      margin: 1.5rem;
+      border-radius: 10px;
+      border: none;
+      color: var(--button-color);
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: rgb(76, 76, 158);
+      font-family: "Jolly Lodger", system-ui;
+      font-weight: 400;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .modify-answers {
+    width: 50%;
+    .modify-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 4rem;
+    }
+  }
+}
