@@ -66,15 +66,8 @@ const edit = async (req, res, next) => {
     id: req.params.id,
     contentAnswer,
     isTheRightAnswer,
-    questionId,
+    question_id: questionId,
   };
-
-  // Convert the isTheRightAnswer property to a boolean value
-  if (updatedAnswer.isTheRightAnswer === "true") {
-    updatedAnswer.isTheRightAnswer = 1;
-  } else {
-    updatedAnswer.isTheRightAnswer = 0;
-  }
 
   try {
     // Update the answer in the database
