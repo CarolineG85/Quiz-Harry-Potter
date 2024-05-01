@@ -65,6 +65,30 @@
         outline: none;
       }
     }
+    .messCo {
+      position: absolute;
+      left: 60%; // TODO change position when responsive
+      bottom: 65%;
+      z-index: 100;
+      color: green;
+      border: 1px solid green;
+      border-radius: 5px;
+      background-color: lightgreen;
+      width: fit-content;
+      padding: 5px;
+    }
+    .messEr {
+      position: absolute;
+      left: 50%; // TODO change position when responsive
+      bottom: 65%;
+      z-index: 100;
+      color: red;
+      border: 1px solid red;
+      background-color: lightcoral;
+      width: fit-content;
+      border-radius: 5px;
+      padding: 5px;
+    }
   }
 
   .button-modify-container {

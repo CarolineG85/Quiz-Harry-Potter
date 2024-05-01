@@ -14,6 +14,14 @@ function ModifyFormQuestions() {
   const [questionId, setQuestionId] = useState();
   // State to get the answers
   const [answers, setAnswers] = useState([]);
+  // State for the success message
+  const [messCorrect, setMessCorrect] = useState("");
+  // State for the success status
+  const [isOk, setIsOk] = useState(false);
+  // State for the error message
+  const [messError, setMessError] = useState("");
+  // State for the error status
+  const [isNotOk, setIsNotOk] = useState(false);
 
   // Function for fetching the question from the server
   const getQuestion = async () => {
@@ -62,9 +70,22 @@ function ModifyFormQuestions() {
       );
       if (response.status === 200) {
         setQuestion(questionToUpdate);
+        setMessCorrect("Modification réussie");
+        setIsOk(true);
+        // Make the success message disappear after 5 seconds
+        setTimeout(() => {
+          setIsOk(false);
+          setMessCorrect("");
+        }, 5000);
       }
     } catch (error) {
       console.error(error);
+      setIsNotOk(true); // TODO replace with popups
+      setMessError("Erreur lors de la modification");
+      setTimeout(() => {
+        setIsNotOk(false);
+        setMessError("");
+      }, 5000);
       // TODO remplacer par des popups avec toastify
     }
   };
@@ -89,6 +110,8 @@ function ModifyFormQuestions() {
             required
             defaultValue={question && question.content}
           />
+          {isOk && <p className="messCo">{messCorrect}</p>}
+          {isNotOk && <p className="messEr">{messError}</p>}
         </div>
         <div className="button-modify-container">
           <button className="button-modify" type="submit">

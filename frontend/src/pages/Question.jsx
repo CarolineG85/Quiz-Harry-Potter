@@ -25,7 +25,7 @@ function Question() {
     // Using the useEffect hook to run a side effect
     if (id !== prevId) {
       // If the id has changed
-      setClickedButtons([]); // Resetting the clicked buttons
+      setClickedButtons([]); // Resetting the clicked buttons to let the user answer to the next question
       setPrevId(id); // Updating the previous id
     }
   }, [id, prevId]); // The side effect depends on the id and the previous id

@@ -102,7 +102,7 @@ function AddFormQuestions() {
             <p>
               Cliquez sur "Ajouter" une fois la question écrite <br /> puis
               écrivez une par une quatre suggestions de réponses. <br /> Celle
-              qui sera cochée sera bonne réponse du quiz. <br />
+              qui sera cochée sera la bonne réponse du quiz. <br />
               Si besoin, allez modifier cette nouvelle question <br />
               et ses réponses en retournant sur l'espace administrateur.
             </p>
