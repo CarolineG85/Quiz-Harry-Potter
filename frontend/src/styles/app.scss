@@ -20,6 +20,7 @@
       color: antiquewhite;
       position: absolute;
       bottom: 0;
+      left: 10px;
     }
 
     .button-next-quest {
@@ -84,16 +85,15 @@
 @media screen and (max-width: 320px) {
   .app-page {
     .app-superposition {
-      position: relative; // Ajoutez cette ligne
+      position: relative;
 
       .button-next-quest {
-        position: absolute; // Ajoutez cette ligne
-        top: 0; // Modifiez cette ligne
-        left: 0; // Ajoutez cette ligne
+        position: absolute;
+        top: 0;
+        left: 0;
         font-size: 1rem;
         height: fit-content;
-        // padding: 5px;
-        width: min-content;
+        width: 50%;
       }
     }
   }
