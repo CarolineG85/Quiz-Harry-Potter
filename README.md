@@ -1,5 +1,3 @@
-ON GOING!!!
-
 As a fan of Harry Potter, I want you (and me) to have fun with this quiz.
 This project is the occasion to apply almost everything that I've learnt in my development studies, joining databases, frontend and backend.<br>
 I use Express, Node, MySQL, React and Sass. <br>
@@ -18,7 +16,7 @@ You will find the the MCD here:
 
 
 
-This app wil be simple, each person will be directed straight to the questions page. They will answer a serie of 5 questions and receive their final score at the end. At this moment, only the previously designated administrator will be able to log in to add, modify, or delete questions.
+This app wil be simple, each person will be directed straight to the questions page. They will answer a random serie of 10 questions and receive their final score at the end. At this moment, only the previously designated administrator will be able to log in to add, modify, or delete questions. This backoffice is available on dev branch not on the main. 
 
 
 
