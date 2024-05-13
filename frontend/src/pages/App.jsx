@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"; // Hooks from React for side effects and state
 import { useNavigate, useLoaderData, Outlet, Navigate } from "react-router-dom"; // Components from React Router for navigation, loading data, and rendering routes
 import axios from "axios"; // A library for making HTTP requests
-import AdminNavbar from "../components/AdminNavbar"; // The AdminNavbar component
 
 // Defining the App component
 function App() {
@@ -38,8 +37,6 @@ function App() {
   return (
     <div className="app-page">
       <div className="app-superposition">
-        <AdminNavbar />
-
         {isQuestEnd ? (
           <Navigate to="/score" />
         ) : (
