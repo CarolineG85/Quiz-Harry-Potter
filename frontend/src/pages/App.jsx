@@ -55,6 +55,7 @@ function App() {
             </button>
           </>
         )}
+        <p className="copy">&copy; 2024 Caroline Gallix </p>
       </div>
     </div>
   );

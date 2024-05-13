@@ -18,7 +18,7 @@ const login = async (req, res, next) => {
       // TODO: hash password in the database and compare it with the password in the request body (need to create new admin?)
       if (admin.password === password) {
         delete admin.password;
-        // Remove the hashed password from the admin object
+        // Remove the password from the admin object
 
         // Generate a JWT token for the user
         const token = await jwt.sign(
