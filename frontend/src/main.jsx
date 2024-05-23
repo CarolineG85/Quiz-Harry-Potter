@@ -8,7 +8,6 @@ import "./styles/index.scss";
 
 import Question from "./pages/Question";
 
-import { AdminProvider } from "./contexts/AdminContext";
 import Score from "./pages/Score";
 import { ScoreProvider } from "./contexts/ScoreContext";
 
@@ -31,12 +30,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <AdminProvider>
-      <ScoreProvider>
-        <RouterProvider router={router} />
-      </ScoreProvider>
-    </AdminProvider>
+    <ScoreProvider>
+      <RouterProvider router={router} />
+    </ScoreProvider>
   </React.StrictMode>
 );
-
-// AdminProvider vu qu'on ne peut pas ici englober tout App
