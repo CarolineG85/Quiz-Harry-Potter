@@ -33,7 +33,7 @@
           padding: 10px;
           h1 {
             color: silver;
-            font-family: "Jolly Lodger", system-ui;
+            font-family: var(--font-title);
             font-weight: 400;
             font-style: normal;
             font-size: 3rem;
@@ -52,7 +52,7 @@
           p {
             font-size: 1.5rem;
             color: silver;
-            font-family: "Jolly Lodger", system-ui;
+            font-family: var(--font-title);
             font-style: normal;
             font-size: 2rem;
 
@@ -65,7 +65,7 @@
       }
       .restart {
         .restart-but {
-          font-family: "Jolly Lodger", system-ui;
+          font-family: var(--font-title);
           font-style: normal;
           font-size: 1.5rem;
           border-radius: 10px;
