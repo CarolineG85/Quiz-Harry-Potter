@@ -20,7 +20,7 @@
       margin-right: 20px;
       margin-top: 10px;
       cursor: pointer;
-      font-family: "Jolly Lodger", system-ui;
+      font-family: var(--font-title);
       font-weight: 400;
       font-size: 1.5rem;
       transition: transform 0.3s ease;
@@ -45,7 +45,7 @@
       label {
         margin-top: 20px;
         margin-bottom: 10px;
-        font-family: "Jolly Lodger", system-ui;
+        font-family: var(--font-title);
         font-size: 1.5rem;
         color: antiquewhite;
       }
@@ -109,7 +109,7 @@
       margin-top: 10px;
       cursor: pointer;
       background-color: rgb(76, 76, 158);
-      font-family: "Jolly Lodger", system-ui;
+      font-family: var(--font-title);
       font-weight: 400;
       font-size: 1.5rem;
       transition: transform 0.3s ease;

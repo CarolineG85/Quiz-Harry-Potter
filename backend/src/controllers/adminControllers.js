@@ -34,19 +34,8 @@ const read = async (req, res, next) => {
   }
 };
 
-// const add = async (req, res, next) => {
-//   const admin = req.body;
-//   try {
-//     const insertid = await tables.Admin.create(admin);
-//     res.status(201).json({ id: insertid });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
 // Ready to export the controller functions
 module.exports = {
   browse,
   read,
-  // add,
 };

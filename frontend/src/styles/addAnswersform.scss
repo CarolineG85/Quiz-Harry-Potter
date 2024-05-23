@@ -8,7 +8,7 @@
     label {
       margin-top: 20px;
       margin-bottom: 10px;
-      font-family: "Jolly Lodger", system-ui;
+      font-family: var(--font-title);
       font-size: 1.5rem;
       color: antiquewhite;
     }
@@ -69,7 +69,7 @@
       margin-right: 20px;
       cursor: pointer;
       background-color: rgb(179, 63, 63);
-      font-family: "Jolly Lodger", system-ui;
+      font-family: var(--font-title);
       font-weight: 400;
       font-size: 1rem;
       transition: transform 0.3s ease;

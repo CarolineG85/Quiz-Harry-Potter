@@ -40,7 +40,7 @@
         .question-card {
           color: rgb(99, 34, 34);
 
-          font-family: "Jolly Lodger", system-ui;
+          font-family: var(--font-title);
           font-weight: 400;
           font-size: 1.5rem;
           overflow: hidden;

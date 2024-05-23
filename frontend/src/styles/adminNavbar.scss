@@ -19,7 +19,7 @@
       margin-top: 10px;
       cursor: pointer;
       transition: transform 0.3s ease;
-      font-family: "Jolly Lodger", system-ui;
+      font-family: var(--font-title);
       font-size: 1.5rem;
 
       &:hover {
